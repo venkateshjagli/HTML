@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timing Function</title>
+    <script>
+        var ID = 0;
+        var seconds = 100;
+    function printMsg(){
+        document.getElementById("op").innerHTML =seconds+ "Seconds";
+        seconds++;
+        //seconds--;
+    }
+    function start(){
+        ID=window.setInterval(printMsg, 1000);
+    }
+    function stop(){
+        window.clearInterval(ID);
+    }
+    </script>
+</head>
+<body>
+    <button onclick="start()" id="btnAdd">Start</button>
+    <h2 id="op">Some Text</h2>
+    <button onclick="stop()" id="btnStop">Stop</button>
+</body>
+</html>

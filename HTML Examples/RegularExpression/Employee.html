@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Regular Explression</title>
+    <script>
+       
+        function empid(){
+            var employeeId = document.getElementById("empId").value;
+            let regx = /E00/;
+    
+            if (regx.test(employeeId)) {
+                alert("SuccessFuly")
+            }else{
+                alert("Invalid Employee Id")
+            }
+        }
+        
+        function empname(){
+            var employeeName = document.getElementById("empName").value;
+            let regx1 = /^[a-z][^0-9]$/i;
+    
+            if (regx1.test(employeeName)) {
+                alert("Employee Name Entery SuccessFuly ")
+            }else{
+                alert("Invalid Employee Name")
+            }
+        }
+        
+        function empmobile(){
+            var employeeMobile = document.getElementById("empMobile").value;
+            let regx2 = /^[7-9][0-9]{9}$/;
+    
+            if (regx2.test(employeeMobile)) {
+                alert("Employee Mobile Number Entery SuccessFuly ")
+            }else{
+                alert("Invalid Employee Mobile Number")
+            }
+        } 
+         function empemail(){
+            var employeeEmail = document.getElementById("empEmail").value;
+            let regx3 = /^([a-zA-Z0-9\.-]+)@([a-z0-9-]+).([a-z]{2,8})(.[a-z]{2,8})?$/;
+    
+            if (regx3.test(employeeEmail)) {
+               // alert("Employee Email Id Entery SuccessFuly ")
+                document.getElementById("lbemail").innerHTML="Valid";
+                document.getElementById("lbemail").style.visibility="visible";
+                document.getElementById("lbemail").style.color="green";
+            }else{
+               // alert("Invalid Employee Email Id")
+                document.getElementById("lbemail").innerHTML="Invalid";
+                document.getElementById("lbemail").style.visibility="visible";
+                document.getElementById("lbemail").style.color="red";
+            }
+        }
+    </script>
+</head>
+
+
+<body>
+    <form>
+             Employee Id : <input id="empId" type="text" placeholder="Employee Id"><br>
+             <button onclick="empid()" type="submit">Submit</button><br><br>
+
+             Employee Name : <input id="empName" type="text" placeholder="Employee Name"><br>
+             <button onclick="empname()" type="submit">Submit</button><br><br>
+
+             Employee Mobile : <input id="empMobile" type="text" placeholder="Employee Mobile"><br>
+             <button onclick="empmobile()" type="submit">Submit</button><br><br>
+
+             Employee Email Id : <input id="empEmail" type="text" placeholder="Employee Email"><br>
+             <label id="lbemail" style="color:red; visibility:hidden">Invalid</label><br>
+             <button onclick="empemail()" type="submit">Submit</button><br><br>
+    </form>
+</body>
+</html>

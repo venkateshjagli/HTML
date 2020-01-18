@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>
+Registration Form
+        </title>
+        <script>
+            // First Programme
+            function fn1(){
+                var str = document.getElementById("text1").value;
+                var str1 = document.getElementById("text2").value;
+                alert("The Inside the text box is : " + str + " : " + str1);
+            }
+            // Second Programme
+        function fn2()
+        {
+            var rd1 = document.getElementById("rd1");
+            var rd2 = document.getElementById("rd2");
+            if(rd1.checked==true)
+            alert('The Course Selected is : ' + rd1.value );
+            else if(rd2.checked==true)
+            alert('The Course Seleted is : '  + rd2.value);
+        else
+            alert("No Course Selected");
+        }
+
+        // Third Programme
+        function fn3(){
+            var select = document.getElementById('seleteBox');
+            alert(select.options[select.selectedIndex].value)
+        }
+
+        // Fourth Programme
+        function fn4(){
+            var para = document.getElementsByTagName('p')
+            para[0].style.fontSize = 25;
+            para[1].style.color = 'blue';
+            para[2].style.fontWeight = 'bold';
+            para[3].style.background = 'red';
+
+            // for(let i = 0; i<para.length; i++){
+            //     para[i].style.fontSize = 22;
+            // }
+        }
+
+        // Fiveth Programme
+        function changeStyling(){
+            var element = document.getElementsByClassName('mypara')
+            for(let j = 0; j<element.length; j++){
+                element[j].style.color = 'red';
+            }
+        }  
+        // Sixth Programme
+        function setNewPic(){
+                document.getElementById('img1').src="img/20190321_180117.jpg"
+        }
+        function setName(){
+                document.getElementById('img1').src="img/My Name.png"
+        }
+        </script>
+    </head>
+    <body>
+        <h3>Text Box</h3>
+        <div>
+            <input type="text" id="text1" placeholder="Username"><br>
+            <input type="password" id="text2" placeholder="Password"><br>
+            <button onclick="fn1()" id="btn1">Submit</button>
+        </div>
+        <h3>Radio Box</h3>
+        <div>
+            <input id="rd1" name="grp1" type="radio" value="JavaScript">JavaScript</input><br>
+            <input id="rd2" name="grp1" type="radio" value="Angular">Angular</input><br>
+            <button onclick="fn2()" id="btn2">Radio Button</button>
+        </div>
+        <h3>Select Box</h3>
+<div>
+    <select id="seleteBox">
+        <option value="HTML5 Course">HTML</option>
+        <option value="CSS3 Course">CSS3</option>
+        <option value="JavaScript Course">JavaScript</option>
+        <option value="Angular 6 Course">Angular 6</option>
+    </select><br>
+    <button onclick="fn3()" id="btn3">Selete Me</button>
+</div>
+<h3>getElemenetByTagName</h3>
+<div>
+    <p>This is Paragraph 1</p>
+    <p>This is Paragraph 2</p>
+    <p>This is Paragraph 3</p>
+    <p>This is Paragraph 4</p>
+    <p>This is Paragraph 5</p>
+    <button onclick='fn4()' type="submit">Click me</button>
+</div>
+<h3>getElemenetByClassName</h3>
+<div>
+        <p  class="mypara">This is Paragraph 1</p>
+        <p>This is Paragraph 2</p>
+        <p class="mypara">This is Paragraph 3</p>
+        <p>This is Paragraph 4</p>
+        <p class="mypara">This is Paragraph 5</p>
+        <button onclick='changeStyling()' type="submit">Click me</button>
+</div>
+<h3>mouseover & mouseout events </h3>
+<div>
+    <img id="img1" onmouseover="setNewPic()" onmouseout="setName()" src="img/My Name.png" width="300" />
+    
+</div>
+    </body>
+</html>

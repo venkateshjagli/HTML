@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    function empid(){
+            var employeeId = document.getElementById("empId").value;
+            let regx = /E00/;
+    
+            if (regx.test(employeeId)) {
+                alert("SuccessFuly")
+            }else{
+                alert("Invalid Employee Id")
+            }
+        }
+    </script>
+</head>
+<body>
+    Employee Id : <input id="empId" type="text" placeholder="Employee Id"><br>
+    <button onclick="empid()" type="submit">Submit</button>
+</body>
+</html>
